@@ -13,7 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "@preact/compat": "^17.1.1",
-    "preact": "^10.8.2"
+    "preact": "^10.8.2",
+    "preact-router": "^4.0.1"
   },
   "devDependencies": {
     "esbuild": "^0.14.48",
