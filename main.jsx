@@ -1,3 +1,4 @@
 import { render } from "preact";
+import App from './views/App'
 
-render(<div>Strunz!</div>, document.body)
+render(<App />, document.body)
