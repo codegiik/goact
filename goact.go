@@ -16,14 +16,13 @@ func main() {
 
     app.Static("/", "./dist")
 
-    app.Get("/", func(c *fiber.Ctx) error {
+    app.Get("/*", func(c *fiber.Ctx) error {
         // Render index template
         return c.Render("document", fiber.Map{
             "Title": "Hello, World!",
             "BundleDir": "/main.js",
         })
     })
-
 
     log.Fatal(app.Listen(":3000"))
 }
