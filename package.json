@@ -1,0 +1,13 @@
+{
+  "name": "goact",
+  "version": "0.0.1beta",
+  "author": {
+    "name": "pasc4le",
+    "email": "giuseppe.pascale03@gmail.com"
+  },
+  "description": "A Preact-Go Web Framework",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.14.48"
+  }
+}
