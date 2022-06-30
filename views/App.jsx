@@ -1,7 +1,7 @@
 import Router from 'preact-router';
+import AsyncRoute from 'preact-async-route';
 import { Link } from 'preact-router/match';
 import Home from './Home';
-import About from './About';
 
 export default function App() {
     return (
@@ -12,7 +12,12 @@ export default function App() {
             </nav>
             <Router>
                 <Home path="/" />
-                <About path="/about" />
+                <AsyncRoute
+                    path="/about"
+                    getComponent={() =>
+                        import('./About').then((mod) => mod.default)
+                    }
+                />
             </Router>
         </>
     );
