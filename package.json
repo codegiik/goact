@@ -5,9 +5,18 @@
     "name": "pasc4le",
     "email": "giuseppe.pascale03@gmail.com"
   },
+  "scripts": {
+    "start": "node ./build.js && go build && ./goact"
+  },
   "description": "A Preact-Go Web Framework",
   "license": "MIT",
   "dependencies": {
-    "esbuild": "^0.14.48"
+    "@preact/compat": "^17.1.1",
+    "preact": "^10.8.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.48",
+    "glob": "^8.0.3",
+    "esbuild-plugin-alias": "^0.2.1"
   }
 }
