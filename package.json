@@ -6,7 +6,8 @@
     "email": "giuseppe.pascale03@gmail.com"
   },
   "scripts": {
-    "start": "node ./build.js && go build && ./goact"
+    "build": "node ./build.js",
+    "start": "yarn build && go build && ./goact"
   },
   "description": "A Preact-Go Web Framework",
   "license": "MIT",
