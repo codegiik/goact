@@ -21,6 +21,7 @@ func main() {
         return c.Render("document", fiber.Map{
             "Title": "Hello, World!",
             "BundleDir": "/main.js",
+            "StyleSrc": "/main.css",
         })
     })
 
