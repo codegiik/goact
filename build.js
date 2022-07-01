@@ -1,5 +1,6 @@
 const glob = require('glob');
 const alias = require('esbuild-plugin-alias');
+const cssModules = require('esbuild-css-modules-plugin');
 
 require('esbuild').build({
     entryPoints: ['main.js'],
@@ -18,6 +19,12 @@ require('esbuild').build({
         alias({
             'react-dom': '@preact/compat',
             react: '@preact/compat',
+        }),
+        cssModules({
+            v2: true,
+            v2CssModulesOption: {
+                pattern: `[hash]`,
+            },
         }),
     ],
 });
