@@ -1,3 +1,5 @@
+import style from '../styles/home.module.css';
+
 export default function Home() {
-  return <div>This is the homepage</div>;
+    return <div className={style.wrapper}>This is the homepage</div>;
 }
