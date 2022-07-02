@@ -1,3 +1,9 @@
 .wrapper {
-    color: red;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 27px;
+}
+
+.wrapper h3 {
+    font-weight: 100;
 }

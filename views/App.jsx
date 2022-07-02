@@ -2,6 +2,7 @@ import Router from 'preact-router';
 import AsyncRoute from 'preact-async-route';
 import { Link } from 'preact-router/match';
 import Home from 'views/Home';
+import 'styles/globals.css';
 
 export default function App() {
     return (

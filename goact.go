@@ -19,7 +19,7 @@ func main() {
     app.Get("/*", func(c *fiber.Ctx) error {
         // Render index template
         return c.Render("document", fiber.Map{
-            "Title": "Hello, World!",
+            "Title": "Goact - Hello World!",
             "StyleSrc": "/main.css",
             "BundleSrc": "/main.js",
         })
