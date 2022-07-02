@@ -20,8 +20,8 @@ func main() {
         // Render index template
         return c.Render("document", fiber.Map{
             "Title": "Hello, World!",
-            "BundleDir": "/main.js",
             "StyleSrc": "/main.css",
+            "BundleSrc": "/main.js",
         })
     })
 
