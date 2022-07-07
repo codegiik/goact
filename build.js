@@ -1,5 +1,23 @@
 const alias = require('esbuild-plugin-alias');
-const postcss = require('esbuild-postcss');
+const postCssPlugin = require("esbuild-plugin-postcss2");
+// const postcss = require('esbuild-postcss');
+
+/*
+  const resolvePostCSS = {
+  name: 'resolvePostCSS',
+  setup(build) {
+    let path = require('path');
+
+    build.onResolve({ filter: /.\.css$/ }, args => {
+      return {
+        path: path.join(__dirname, args.path + '.json')
+      }
+    });
+
+    postcss();
+  }
+};
+*/
 
 require('esbuild').build({
     entryPoints: ['main.js'],
@@ -18,7 +36,8 @@ require('esbuild').build({
         alias({
             'react-dom': '@preact/compat',
             react: '@preact/compat',
+            styles: 'styles',
         }),
-        postcss(),
+        postCssPlugin.default()
     ],
 });
