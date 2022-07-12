@@ -20,8 +20,8 @@ require('esbuild').build({
     jsxFragment: 'Fragment',
     plugins: [
         alias({
-            'react-dom': '@preact/compat',
-            react: '@preact/compat',
+            'react-dom': require.resolve('@preact/compat'),
+            react: require.resolve('@preact/compat'),
         }),
         stylePlugin({
             postcss: {
