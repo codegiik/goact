@@ -1,0 +1,9 @@
+.wrapper {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 27px;
+
+    h3 {
+        @apply text-red-500 font-thin;
+    }
+}

@@ -1,5 +1,9 @@
-const glob = require('glob');
 const alias = require('esbuild-plugin-alias');
+const stylePlugin = require('esbuild-style-plugin');
+
+const autoprefixer = require('autoprefixer');
+const tailwindcss = require('tailwindcss');
+const tailwindcssNesting = require('tailwindcss/nesting');
 
 require('esbuild').build({
     entryPoints: ['main.js'],
@@ -18,6 +22,14 @@ require('esbuild').build({
         alias({
             'react-dom': '@preact/compat',
             react: '@preact/compat',
+        }),
+        stylePlugin({
+            postcss: {
+                plugins: [tailwindcssNesting, tailwindcss, autoprefixer],
+            },
+            cssModulesOptions: {
+                generateScopedName: '[hash:base64:5]',
+            },
         }),
     ],
 });
