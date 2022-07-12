@@ -6,7 +6,7 @@
     "email": "giuseppe.pascale03@gmail.com"
   },
   "scripts": {
-    "build": "node ./build.js",
+    "build": "node ./esbuild.config.js",
     "start": "yarn build && go build && ./goact"
   },
   "description": "A Preact-Go Web Framework",
@@ -18,9 +18,12 @@
     "preact-router": "^4.0.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
     "esbuild": "^0.14.48",
     "esbuild-plugin-alias": "^0.2.1",
-    "glob": "^8.0.3",
-    "prettier": "^2.7.1"
+    "ebuild-style-plugin": "^1.6.0",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.5"
   }
 }
