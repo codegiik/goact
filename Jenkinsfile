@@ -5,17 +5,24 @@ pipeline {
             args '-p 3000:3000' 
         }
     }
-    tools {
-      go '1.18.4'
-    }
-    environment {
-        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
-    }
     stages {
-        stage('build') { 
+        stage('Installing Go') { 
+            steps {
+                sh 'wget https://go.dev/dl/go1.18.4.linux-amd64.tar.gz'
+                sh 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.4.linux-amd64.tar.gz'
+                sh 'echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.profile' 
+                sh 'source $HOME/.profile'
+                sh 'go version'
+            }
+        }
+        stage('Building Frontend') { 
             steps {
                 sh 'npm install' 
                 sh 'npm run build'
+            }
+        }
+        stage('Building Backend') {
+            steps {
                 sh 'go build goact.go'
             }
         }
