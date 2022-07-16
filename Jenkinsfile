@@ -8,8 +8,8 @@ pipeline {
     stages {
         stage('Installing Go') { 
             steps {
-                sh 'wget https://go.dev/dl/go1.18.4.linux-amd64.tar.gz'
-                sh 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.4.linux-amd64.tar.gz'
+                sh 'curl https://go.dev/dl/go1.18.4.linux-amd64.tar.gz --output go.tar.gz'
+                sh 'rm -rf /usr/local/go && tar -C /usr/local -xzf go.tar.gz'
                 sh 'echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.profile' 
                 sh 'source $HOME/.profile'
                 sh 'go version'
