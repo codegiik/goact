@@ -21,7 +21,7 @@
     "autoprefixer": "^10.4.7",
     "esbuild": "^0.14.48",
     "esbuild-plugin-alias": "^0.2.1",
-    "ebuild-style-plugin": "^1.6.0",
+    "esbuild-style-plugin": "^1.6.0",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.5"
