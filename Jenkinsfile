@@ -3,13 +3,17 @@ pipeline {
         dockerfile true
     }
     stages {
-        stage('Building Frontend') { 
+        stage('Installing dependencies') { 
             steps {
                 sh 'npm install' 
+            }
+        }
+        stage('Building the Frontend') { 
+            steps {
                 sh 'npm run build'
             }
         }
-        stage('Building Backend') {
+        stage('Building the Backend') {
             steps {
                 sh 'go build goact.go'
             }
