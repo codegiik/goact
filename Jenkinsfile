@@ -2,6 +2,9 @@ pipeline {
     agent {
         dockerfile true
     }
+    environment {
+        NGROK_AUTHTOKEN = credentials('ngrok-authtoken')
+    }
     stages {
         stage('Install dependencies') { 
             steps {
